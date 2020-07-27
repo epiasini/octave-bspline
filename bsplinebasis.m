@@ -32,7 +32,7 @@ searcht(searcht==knots(end)) = knots(last_different_knot);
 
 % calculate 1st order basis functions
 % 1 if in knot span, 0 if not
-temp = zeros(n_samples, nknots-1);
+temp = sparse(n_samples, nknots-1);
 for j = 1:nknots-1
     temp(:,j) = double(searcht >= knots(j) & searcht < knots(j+1));
 end
